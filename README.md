@@ -19,6 +19,10 @@ Analysis of the growth in the number of contaminated, dead and recovered, for th
 ### Cases
 
 * Region
-![4](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/graphics/confirmedcovid.png)
+
+Accumulated cases ![4]
+![4](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/cumconfirmregion.png)
+
+
 
 
