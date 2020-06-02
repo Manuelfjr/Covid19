@@ -11,3 +11,14 @@ Analysis of the growth in the number of contaminated, dead and recovered, for th
 
 ## Recovered
 ![3](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/graphics/revoredcovid.png)
+
+# Brazil
+
+## Region
+
+### Cases
+
+* Region
+![4](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/graphics/confirmedcovid.png)
+
+
