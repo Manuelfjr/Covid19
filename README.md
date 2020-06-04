@@ -71,16 +71,16 @@ Heatmap of the correlation between deaths, by region
 Heat map of the average increase in deaths, from one day to the next, in the last weeks
 ![17](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/heatmapregionweeksdeathscorr.png)
 
-* Fatality
+* Letality
 
-Fatality rate (for World)
-![18](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/code/fatalityrate.png)
+Letality rate (for World)
+![18](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/code/letalityrate.png)
 
-Fatality rate (for Brazil, by region)
-![19](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/fatalityratebrregion.png)
+Letality rate (for Brazil, by region)
+![19](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/letalityratebrregion.png)
 
-Fatality rate (for Brazil, by state)
-![20](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/fatalityratebrstate.png)
+Letality rate (for Brazil, by state)
+![20](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/brazil/letalityratebrstate.png)
 
 * World maps
 
