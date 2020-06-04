@@ -92,5 +92,7 @@ Fatality rate (for Brazil, by state)
 
 
 # Teste
+```{html}
 <blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+```
