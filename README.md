@@ -90,7 +90,7 @@ Fatality rate (for Brazil, by state)
 
 [Recovered](https://github.com/Manuelfjr/Covid19/blob/master/worldmaps/worldmapsrecovered.ipynb)
 
+
 # Teste
-```{html}
-<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2713318" data-url="https://flo.uri.sh/visualisation/2713318/embed"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-```
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
