@@ -96,13 +96,13 @@ Fatality rate (for Brazil, by state)
 <blockquote style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/2713318/?utm_source=embed&utm_campaign=visualisation/2713318' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a><p>Beautiful, easy data visualization and storytelling</p></blockquote>
 
 
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702302/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Estado)</a></h4><p>Bar chart race. Confirmed cases by State.</p></blockquote>
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702302/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Estado)</a></h4><p>Bar chart race. COVID-19 Brazil.</p></blockquote>
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702550/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Região)</a></h4><p>Bar chart race. Confirmed cases by Region.</p></blockquote>
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702550/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Região)</a></h4><p>Bar chart race. COVID-19 Brazil.</p></blockquote>
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4><p>Bar chart race. Deaths by State.</p></blockquote>
+
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713121/">Crescimento de mortos por COVID-19 no Brasil (Por Região)</a></h4><p>Bar chart race. Deaths by Region.</p></blockquote>
 
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4><p>Bar chart race. COVID-19 Brazil.</p></blockquote>
 
-
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713121/">Crescimento de mortos por COVID-19 no Brasil (Por Região)</a></h4><p>Bar chart race. COVID-19 Brazil.</p></blockquote>
