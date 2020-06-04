@@ -91,4 +91,7 @@ Fatality rate (for Brazil, by state)
 [Recovered](https://github.com/Manuelfjr/Covid19/blob/master/worldmaps/worldmapsrecovered.ipynb)
 
 # Teste
-<a href="https://public.flourish.studio/visualisation/2713318/" rel="some text">![Foo](https://public.flourish.studio/visualisation/2713318/)</a>
+```{html}
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2713318" data-url="https://flo.uri.sh/visualisation/2713318/embed"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+```
