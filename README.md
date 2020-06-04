@@ -93,7 +93,7 @@ Fatality rate (for Brazil, by state)
 
 # Growth
 
-<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2702550" data-url="https://flo.uri.sh/visualisation/2702550/embed">
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2702550" data-url="https://flo.uri.sh/visualisation/2702550/embed"></div>
 
 <img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
 
