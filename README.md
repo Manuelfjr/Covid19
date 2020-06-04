@@ -93,6 +93,8 @@ Fatality rate (for Brazil, by state)
 
 # Growth
 
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2702550" data-url="https://flo.uri.sh/visualisation/2702550/embed"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
 <img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
 
 <blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702302/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Estado)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
