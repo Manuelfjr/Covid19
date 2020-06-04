@@ -93,5 +93,4 @@ Fatality rate (for Brazil, by state)
 # Teste
 ```{html}
 <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/2713318" data-url="https://flo.uri.sh/visualisation/2713318/embed"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
 ```
