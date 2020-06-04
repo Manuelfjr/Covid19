@@ -93,7 +93,7 @@ Fatality rate (for Brazil, by state)
 
 # Growth
 
-<amp-iframe sandbox='allow-scripts allow-same-origin' layout=responsive resizable noloading src='https://flo.uri.sh/visualisation/2713318/embed?auto=1' width=400 height=300><amp-img layout=fixed height=64 width=64 src='https://public.flourish.studio/resources/bosh.svg' placeholder style='margin: auto'></amp-img><div overflow></div></amp-iframe><p><a href='https://public.flourish.studio/visualisation/2713318/?utm_source=embed&utm_campaign=visualisation/2713318'><amp-img layout=fixed height=16 width=105 src='https://public.flourish.studio/resources/made_with_flourish.svg' alt='Made with Flourish'></amp-img></a></p>
+<iframe src='https://flo.uri.sh/visualisation/2713318/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/2713318/?utm_source=embed&utm_campaign=visualisation/2713318' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
 <img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
 
