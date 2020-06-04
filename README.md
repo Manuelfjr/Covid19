@@ -97,16 +97,14 @@ Fatality rate (for Brazil, by state)
 
 
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702302/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Estado)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702302/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Estado)</a></h4></blockquote>
+
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702550/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Região)</a></h4></blockquote>
 
 <img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2702550/">Crescimento de casos confirmados por COVID-19 no Brasil (Por Região)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4></blockquote>
 
 <img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
 
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713318/">Crescimento de mortos por COVID-19 no Brasil (Por Estado)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
-
-<img alt="Flourish logo" src="https://public.flourish.rocks/resources/bosh.svg" style="font:inherit!important;width:auto!important;height:12px!important;border:none!important;margin:0 2px 0!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;"><span style="font:inherit!important;color:#888!important;vertical-align:middle!important;display:inline-block!important;box-shadow:none!important;">
-
-<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713121/">Crescimento de mortos por COVID-19 no Brasil (Por Região)</a></h4><p>Beautiful, easy data visualization and storytelling</p></blockquote>
+<blockquote class="embedly-card"><h4><a href="https://public.flourish.studio/visualisation/2713121/">Crescimento de mortos por COVID-19 no Brasil (Por Região)</a></h4></blockquote>
