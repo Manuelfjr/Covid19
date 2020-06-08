@@ -84,12 +84,11 @@ Letality rate (for Brazil, by state)
 
 * World maps
 
-[Confirmeds](https://github.com/Manuelfjr/Covid19/blob/master/worldmaps/worldmapsconfirmed.ipynb)
+[Confirmeds](https://bit.ly/37bdsJH)
 
-[Deaths](https://github.com/Manuelfjr/Covid19/blob/master/worldmaps/worldmapsdeaths.ipynb)
+[Deaths](https://bit.ly/3h9LnXw)
 
-[Recovered](https://github.com/Manuelfjr/Covid19/blob/master/worldmaps/worldmapsrecovered.ipynb)
-
+[Recovered](https://bit.ly/2BM5F9z)
 
 # Growth
 
