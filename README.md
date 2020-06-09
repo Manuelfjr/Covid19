@@ -84,11 +84,11 @@ Letality rate (for Brazil, by state)
 
 * World maps
 
-[Confirmeds]()
+[Confirmeds](https://bit.ly/3cR7zSV)
 
-[Deaths]()
+[Deaths](https://bit.ly/30rokBU)
 
-[Recovered]()
+[Recovered](https://bit.ly/3f7Gf4x)
 
 # Growth
 
