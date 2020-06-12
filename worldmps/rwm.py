@@ -35,9 +35,13 @@ def parse_arguments():
                         type=str,
                         default='recovered.csv',
                         help='''file name ''')
+    parser.add_argument('-t', '--type', dest='type',
+                        type=str,
+                        default='rwm',
+                        help='''type (confirmed,deaths,recovered) ''')
     return parser.parse_args()
 
-def recoveredmps(run, date='6/10/20',bool=True,folder='dataworldr',filename='recovered.csv'):
+def rwm(run=True, date='6/10/20',bool=True,folder='dataworldr',filename='recovered.csv',type='rwm'):
     if bool == False:
         db_recovered = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv', index_col=0)
         if not os.path.exists(folder):
@@ -73,4 +77,4 @@ def recoveredmps(run, date='6/10/20',bool=True,folder='dataworldr',filename='rec
 
 if __name__ == '__main__':
     args = parse_arguments()
-    recoveredmps(**vars(args))
+    rwm(**vars(args))

@@ -33,35 +33,39 @@ def parse_arguments():
                         help='''folder name''')
     parser.add_argument('-n', '--filename', dest='filename',
                         type=str,
-                        default='confirmed.csv',
+                        default='deaths.csv',
                         help='''file name ''')
+    parser.add_argument('-t', '--type', dest='type',
+                        type=str,
+                        default='dwm',
+                        help='''type (confirmed,deaths,recovered) ''')
     return parser.parse_args()
 
-def confirmedmps(run, date='6/10/20',bool=True,folder='dataworldr',filename='confirmed.csv'):
+def deathsmps(run=True, date='6/10/20',bool=True,folder='dataworldr',filename='deaths.csv',type='dwm'):
     if bool == False:
-        db_confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv', index_col=0)
+        db_deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv', index_col=0)
         if not os.path.exists(folder):
             os.makedirs(folder)
-        db_confirmed.to_csv(os.path.join(folder, filename), index=None)
+        db_deaths.to_csv(os.path.join(folder, filename), index=None)
     else:
-        db_confirmed = pd.read_csv(os.path.join(folder, filename))
+        db_deaths = pd.read_csv(os.path.join(folder, filename))
 
 
-    db_confirmed_country = db_confirmed.groupby(['Country/Region']).sum()
-    db_confirmed_country.drop(['Lat','Long'],axis=1,inplace=True)
+    db_deaths_country = db_deaths.groupby(['Country/Region']).sum()
+    db_deaths_country.drop(['Lat','Long'],axis=1,inplace=True)
 
     if run == True:
         data = dict(type='choropleth',
                     colorscale = 'rdgy',
                     reversescale = True,
-                    locations = db_confirmed_country.index,
-                    z = db_confirmed_country[date],
+                    locations = db_deaths_country.index,
+                    z = db_deaths_country[date],
                     locationmode = 'country names',
                     marker = dict(line = dict(color = 'rgb(0,0,0)',width =1)),
                     colorbar = {'title':"Confirmados confirmados"},
                     text = date
                     ) 
-        layout = dict(title = 'Mapa do número de confirmados com COVID-19, por país - {}'.format(date.split('/')[1] + '/'  + date.split('/')[0] + '/' + date.split('/')[2] + '.'),
+        layout = dict(title = 'Mapa do número de mortos por COVID-19, por país - {}'.format(date.split('/')[1] + '/'  + date.split('/')[0] + '/' + date.split('/')[2] + '.'),
                     geo = dict(scope='world',
                                 showframe = True,
                                 projection = {'type':'natural earth'})
@@ -70,8 +74,8 @@ def confirmedmps(run, date='6/10/20',bool=True,folder='dataworldr',filename='con
         choromap = go.Figure(data = [data],layout = layout)
         iplot(choromap,validate=False,image_width=15000, image_height=1000)
     else:
-        print(pd.DataFrame(db_confirmed_country))
+        print(pd.DataFrame(db_deaths_country))
 
 if __name__ == '__main__':
     args = parse_arguments()
-    confirmedmps(**vars(args))
+    deathsmps(**vars(args))
