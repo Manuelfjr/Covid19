@@ -12,11 +12,11 @@ def parse_arguments():
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
                         default='6/11/20',
-                        help='''date maps''')
+                        help='''date by US type''')
     parser.add_argument('-dbr', '--datebr', dest='datebr',
                         type=str,
                         default='11/6',
-                        help='''date maps''')
+                        help='''date by brazillian type''')
     parser.add_argument('-dys', '--days', dest='days',
                         type=int,
                         default=30,
@@ -36,7 +36,7 @@ def parse_arguments():
     parser.add_argument('-n', '--numstates', dest='n',
                         type=int,
                         default=10,
-                        help='''states number ''')
+                        help='''states number of Brazil (top n)''')
 
     return parser.parse_args()
 
