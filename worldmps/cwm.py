@@ -1,8 +1,8 @@
-import seaborn as sns
+#import seaborn as sns
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import plotly.graph_objs as go
-import numpy as np
+#import numpy as np
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import cufflinks as cf
 import argparse
@@ -10,7 +10,7 @@ import os as os
 
 cf.go_offline()
 
-sns.set_style('darkgrid')
+#sns.set_style('darkgrid')
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='''Runs all the code''',
@@ -42,7 +42,7 @@ def parse_arguments():
 
     return parser.parse_args()
 
-def cwm(run=True, date='6/10/20',bool=True,folder='dataworldr',filename='confirmed.csv',type='cwm'):
+def cwm(run, date='6/10/20',bool=True,folder='dataworldr',filename='confirmed.csv',type='cwm'):
     if bool == False:
         db_confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv', index_col=0)
         if not os.path.exists(folder):

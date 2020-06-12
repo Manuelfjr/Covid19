@@ -40,5 +40,5 @@ if __name__ == '__main__':
             dwm(**vars(args))
         else:
             if vars(args)['type'] == 'rwm':
-                from rwm import rwm
-                rwm(**vars(args))
+                import rwm as rwm
+                rwm.rwm(**vars(args))
