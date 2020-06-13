@@ -7,9 +7,9 @@ def concat():
     statebrconfirm = pd.read_csv('statebrconfirm.csv')
     statebrdeaths = pd.read_csv('statebrdeaths.csv')
 
-    # Concatenando imagens
-    regionbrconfirm['image'] = pd.read_csv('imageregion.csv',sep=',')
-    regionbrdeaths['image'] = pd.read_csv('imageregion.csv',sep=',')
+    # Concatenando imagens/poptotalregion
+    regionbrconfirm['image'],regionbrconfirm['poptotalregion'] = pd.read_csv('imageregion.csv',sep=',')['image'],pd.read_csv('imageregion.csv',sep=',')['poptotalregion'] 
+    regionbrdeaths['image'], regionbrdeaths['poptotalregion'] = pd.read_csv('imageregion.csv',sep=',')['image'],pd.read_csv('imageregion.csv',sep=',')['poptotalregion'] 
 
     statebrconfirm['image'] = pd.read_csv('imagestate.csv',sep=',')
     statebrdeaths['image'] = pd.read_csv('imagestate.csv',sep=',')
