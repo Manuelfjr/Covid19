@@ -2,6 +2,8 @@ import argparse as argparse
 from brazilcode import brazilcode
 from graphics import graphics
 from covid19 import covid19
+from concat import concat
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='''Runs all the code''',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -47,3 +49,5 @@ if __name__ == '__main__':
         graphics(date=param['date'],nc=param['nc'])
         brazilcode(datebr=param['datebr'], days=param['days'], weeks=param['weeks'], n_weeks=param['n_weeks'], n=param['n'])
         covid19(date=param['date'],nc=param['nc'])
+        concat()
+
