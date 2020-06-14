@@ -1,3 +1,10 @@
+# How Use
+
+## Clone
+```{git}
+git clone https://github.com/Manuelfjr/Covid19.git 
+```
+
 # Growth charts and percentages
 Analysis of the growth in the number of contaminated, dead and recovered, for the world, especially for Brazil
 
