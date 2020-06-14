@@ -2,9 +2,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Free Web tutorials">
-  <meta name="keywords" content="HTML, CSS, JavaScript">
-  <meta name="author" content="John Doe">
+  <meta name="description" content="Free tracking for COVID-19 in world">
+  <meta name="keywords" content="HTML,Python">
+  <meta name="author" content="Manuel Ferreira Junior">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head> 
 
@@ -25,12 +25,12 @@ cd Covid19/worldmps
 
 python wmps.py -h
 ```
-
 The command "-h" show help for use (show the arguments).
-
-* -h, --help        : show help message, and arguments
-* -r RUN, --run RUN : run all code (default: True)
-* -d  
+```{git}
+ -h, --help        : show help message, and arguments
+ -r RUN, --run RUN : run all code (default: True)
+ -d 
+```
 
 # Growth charts and percentages
 Analysis of the growth in the number of contaminated, dead and recovered, for the world, especially for Brazil
