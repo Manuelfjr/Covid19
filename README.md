@@ -12,7 +12,7 @@
 
 How clone this repository
 ```{git}
----
+----------------------------
 git clone https://github.com/Manuelfjr/Covid19.git 
 ```
 
