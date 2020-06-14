@@ -1,9 +1,28 @@
 # How Use
 
 ## Clone
+
+How clone this repository
 ```{git}
 git clone https://github.com/Manuelfjr/Covid19.git 
 ```
+
+## Features
+
+### World maps
+
+That feature necessary open cmd in Covid/worldmps, or copy
+```{git}
+cd Covid19/worldmps
+
+python wmps.py -h
+```
+
+The command "-h" show help for use (show the arguments).
+
+* -h, --help        : show help message, and arguments
+* -r RUN, --run RUN : run all code (default: True)
+* -d  
 
 # Growth charts and percentages
 Analysis of the growth in the number of contaminated, dead and recovered, for the world, especially for Brazil
