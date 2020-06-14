@@ -59,6 +59,35 @@ The command "-h" show help for use (show the arguments).
 -----------------------------------------------------------------------------------------------------------------
 ```
 
+### All 
+
+the all.py generate all graphs on terminal. Usage:
+
+```{git}
+$ python all.py -h 
+```
+-h argument for help needed for other arguments. Optional arguments:
+```{git}
+ -h, --help            		: show this help message and exit
+
+ -all ALL, --all ALL   		: run all (default: True)
+
+ -d DATE, --date DATE  		: date by US type (default: 6/11/20)
+
+ -dbr DATEBR, --datebr DATEBR	: date by brazillian type (default: 11/6)
+
+ -dys DAYS, --days DAYs   	: countries number (default: 30)
+
+ -w WEEKS, --weeks WEEKS  	: today (default: 5)
+
+ -nw N_WEEKS, --n_weeks N_WEEKS : number weeks (default: 14)
+
+ -nc NC, --numcountries NC 	: countries number (default: 6)
+
+ -n N, --numstates N   		: states number of Brazil (top n) 
+				(default: 10)
+
+```
 # Growth charts and percentages
 Analysis of the growth in the number of contaminated, dead and recovered, for the world, especially for Brazil
 
