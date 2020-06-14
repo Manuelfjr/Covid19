@@ -27,9 +27,25 @@ python wmps.py -h
 ```
 The command "-h" show help for use (show the arguments).
 ```{git}
- -h, --help        : show help message, and arguments
- -r RUN, --run RUN : run all code (default: True)
- -d 
+ -h, --help           		: show help message, and arguments
+ -r RUN, --run RUN    		: run all code (default: True)
+ -a ALL, --all ALL		: boolean value, if True, create local
+				host for all maps, if False, creat
+				local host for the "TYPE"
+				(default: False)
+ -d DATE, --date DATE		: the day how reference to create
+				world maps. (default: 6/10/20) 
+ -b BOOL, --bool BOOL    	: boolean value. Do you have datasets ?!
+			  	if True, continue, if False, download
+		 		datasets. (default: False)
+ -f FOLDER, --folder FOLDER	: folder name for datasets.
+				(default: dataworld)
+ -t TYPE, --type TYPE 		: type confirmed, recovered or deaths.
+				- cwm == 'confirmed'
+				- rwm == 'recovered'
+				- dwm == 'deaths'
+				(default: cwm)
+
 ```
 
 # Growth charts and percentages
