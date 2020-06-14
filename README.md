@@ -12,8 +12,9 @@
 
 How clone this repository
 ```{git}
-----------------------------
+-----------------------------------------------------------------------------------------------------------------
 git clone https://github.com/Manuelfjr/Covid19.git 
+-----------------------------------------------------------------------------------------------------------------
 ```
 
 ## Features
@@ -22,12 +23,15 @@ git clone https://github.com/Manuelfjr/Covid19.git
 
 That feature necessary open cmd in Covid/worldmps, or copy
 ```{git}
+-----------------------------------------------------------------------------------------------------------------
 cd Covid19/worldmps
 
 python wmps.py -h
+-----------------------------------------------------------------------------------------------------------------
 ```
 The command "-h" show help for use (show the arguments).
 ```{git}
+-----------------------------------------------------------------------------------------------------------------
  -h, --help           		: show help message, and arguments
 
  -r RUN, --run RUN    		: run all code (default: True)
@@ -52,6 +56,7 @@ The command "-h" show help for use (show the arguments).
 				- rwm == 'recovered'
 				- dwm == 'deaths'
 				(default: cwm)
+-----------------------------------------------------------------------------------------------------------------
 ```
 
 # Growth charts and percentages
