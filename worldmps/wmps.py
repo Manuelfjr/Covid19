@@ -17,28 +17,40 @@ def parse_arguments():
                         help='''boolean value''')
     parser.add_argument('-f', '--folder', dest='folder',
                         type=str,
-                        default='dataworldr',
+                        default='dataworld',
                         help='''folder name''')
-    parser.add_argument('-n', '--filename', dest='filename',
-                        type=str,
-                        default='confirmed.csv',
-                        help='''file name ''')
+#    parser.add_argument('-n', '--filename', dest='filename',
+#                        type=str,
+#                        default='confirmed.csv',
+#                        help='''file name ''')
     parser.add_argument('-t', '--type', dest='type',
                         type=str,
                         default='cwm',
                         help='''type (confirmed,deaths,recovered) ''')
+    parser.add_argument('-a', '--all', dest='all',
+                        type=bool,
+                        default=False,
+                        help='''boolean value''')
     return parser.parse_args()
 
 if __name__ == '__main__':
     args = parse_arguments()
-    if vars(args)['type'] == 'cwm':
+    if vars(args)['all'] == True:
         from cwm import cwm
+        from dwm import dwm
+        from rwm import rwm
         cwm(**vars(args))
-    else:
-        if vars(args)['type'] == 'dwm':
-            from dwm import dwm
-            dwm(**vars(args))
+        dwm(**vars(args))
+        rwm(**vars(args))
+    elif vars(args)['all'] == False:
+        if vars(args)['type'] == 'cwm':
+            from cwm import cwm
+            cwm(**vars(args))
         else:
-            if vars(args)['type'] == 'rwm':
-                import rwm as rwm
-                rwm.rwm(**vars(args))
+            if vars(args)['type'] == 'dwm':
+                from dwm import dwm
+                dwm(**vars(args))
+            else:
+                if vars(args)['type'] == 'rwm':
+                    import rwm as rwm
+                    rwm.rwm(**vars(args))

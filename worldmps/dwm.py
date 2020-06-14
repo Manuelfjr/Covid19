@@ -29,7 +29,7 @@ def parse_arguments():
                         help='''boolean value''')
     parser.add_argument('-f', '--folder', dest='folder',
                         type=str,
-                        default='dataworldr',
+                        default='dataworld',
                         help='''folder name''')
     parser.add_argument('-n', '--filename', dest='filename',
                         type=str,
@@ -41,7 +41,7 @@ def parse_arguments():
                         help='''type (confirmed,deaths,recovered) ''')
     return parser.parse_args()
 
-def dwm(run, date='6/10/20',bool=True,folder='dataworldr',filename='deaths.csv',type='dwm'):
+def dwm(run, date='6/10/20',bool=True,folder='dataworld',filename='deaths.csv',type='dwm',all=False):
     if bool == False:
         db_deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv', index_col=0)
         if not os.path.exists(folder):
