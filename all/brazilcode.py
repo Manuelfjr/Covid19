@@ -68,10 +68,10 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
     regionbrconfirm.columns.name = 'Regiao'
     regionbrdeaths.columns.name = 'Regiao'
     
-    regionbrconfirm.T.to_csv(os.path.join(folder,'regionbrconfirm.csv'), index=None)
-    regionbrdeaths.T.to_csv(os.path.join(folder,'regionbrdeaths.csv'), index=None)
-    statebrconfirm.T.to_csv(os.path.join(folder,'statebrconfirm.csv'), index=None)
-    statebrdeaths.T.to_csv(os.path.join(folder,'statebrdeaths.csv'), index=None)
+    regionbrconfirm.T.to_csv(os.path.join(folder,'regionbrconfirm.csv'))
+    regionbrdeaths.T.to_csv(os.path.join(folder,'regionbrdeaths.csv'))
+    statebrconfirm.T.to_csv(os.path.join(folder,'statebrconfirm.csv'))
+    statebrdeaths.T.to_csv(os.path.join(folder,'statebrdeaths.csv'))
     
     
     #regionbrconfirm.T.to_csv(os.path.join(folder,'regionbrconfirm.csv'))
