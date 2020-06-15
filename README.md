@@ -13,7 +13,7 @@
 How clone this repository
 ```{git}
 -----------------------------------------------------------------------------------------------------------------
-git clone https://github.com/Manuelfjr/Covid19.git 
+$ git clone https://github.com/Manuelfjr/Covid19.git 
 -----------------------------------------------------------------------------------------------------------------
 ```
 
@@ -26,7 +26,7 @@ That feature necessary open cmd in Covid/worldmps, or copy
 -----------------------------------------------------------------------------------------------------------------
 cd Covid19/worldmps
 
-python wmps.py -h
+$ python wmps.py -h
 -----------------------------------------------------------------------------------------------------------------
 ```
 The command "-h" show help for use (show the arguments).
