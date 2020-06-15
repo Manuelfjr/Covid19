@@ -60,7 +60,7 @@ The command "-h" show help for use (show the arguments).
 ```
 #### Example (confirmed cases of world):
 
-![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/.cwm.gif)
+![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/.others/.cwm.gif)
 
 ### All 
 
