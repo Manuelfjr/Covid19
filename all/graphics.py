@@ -1,4 +1,5 @@
 import argparse
+import os as os
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='''Runs all the code''',
@@ -14,7 +15,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def graphics(date='6/11/20',nc=6):
-    
+    images = 'images'
     import seaborn as sns
     import pandas as pd
     import matplotlib.pyplot as plt
@@ -41,7 +42,7 @@ def graphics(date='6/11/20',nc=6):
     plt.ylabel('Número de Confirmados')
     plt.title('Confirmados por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
     plt.legend()
-    plt.savefig('confirmedcovid.png')
+    plt.savefig(os.path.join(images,'confirmedcovid.png'))
 
     #Mortos
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -51,7 +52,7 @@ def graphics(date='6/11/20',nc=6):
     plt.ylabel('Número de Mortos')
     plt.title('Mortes por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
     plt.legend()
-    plt.savefig('deathscovid.png')
+    plt.savefig(os.path.join(images,'deathscovid.png'))
 
     #Recuperados
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -61,7 +62,7 @@ def graphics(date='6/11/20',nc=6):
     plt.ylabel('Número de Recuperados')
     plt.title('Recuperados por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
     plt.legend()
-    plt.savefig('revoredcovid.png')
+    plt.savefig(os.path.join(images,'revoredcovid.png'))
     
 
 if __name__ == '__main__':

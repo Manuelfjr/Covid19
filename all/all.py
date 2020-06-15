@@ -46,8 +46,8 @@ if __name__ == '__main__':
     args = parse_arguments()
     param = vars(args)
     if param['all'] == True:
-        graphics(date=param['date'],nc=param['nc'])
         brazilcode(datebr=param['datebr'], days=param['days'], weeks=param['weeks'], n_weeks=param['n_weeks'], n=param['n'])
+        graphics(date=param['date'],nc=param['nc'])
         covid19(date=param['date'],nc=param['nc'])
         concat()
 

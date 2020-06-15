@@ -60,7 +60,7 @@ The command "-h" show help for use (show the arguments).
 ```
 #### Example (confirmed cases of world):
 
-![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cwm.gif)
+![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/.cwm.gif)
 
 ### All 
 
@@ -102,13 +102,13 @@ Analysis of the growth in the number of contaminated, dead and recovered, for th
 # Graphics
 
 ## Cases
-![1](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/confirmedcovid.png)
+![1](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/confirmedcovid.png)
 
 ## Deaths
-![2](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/deathscovid.png)
+![2](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/deathscovid.png)
 
 ## Recovered
-![3](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/revoredcovid.png)
+![3](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/revoredcovid.png)
 
 # Brazil
 
@@ -119,23 +119,23 @@ Analysis of the growth in the number of contaminated, dead and recovered, for th
 * Region
 
 Accumulated cases 
-![4](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cumconfirmregion.png)
+![4](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/cumconfirmregion.png)
 
 Increase from one day to the next (last 30 days)
-![5](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/confirmratedaysregion.png)
+![5](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/confirmratedaysregion.png)
 
 average increment from one day to the next, for the last 5 weeks
-![6](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/confirmrateweeksregion.png)
+![6](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/confirmrateweeksregion.png)
 
 * State
 Accumulated cases 
-![7](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cumconfirmstate.png)
+![7](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/cumconfirmstate.png)
 
 Increase from one day to the next (last 30 days)
-![8](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/confirmratedaysstate.png)
+![8](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/confirmratedaysstate.png)
 
 average increment from one day to the next, for the last 5 weeks
-![9](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/confirmrateweeksstate.png)
+![9](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/confirmrateweeksstate.png)
 
 
 ### Deaths
@@ -143,42 +143,42 @@ average increment from one day to the next, for the last 5 weeks
 * Region
 
 Accumulated deaths 
-![10](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cumdeathsregion.png)
+![10](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/cumdeathsregion.png)
 
 Increase from one day to the next (last 30 days)
-![11](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/deathsratedaysregion.png)
+![11](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/deathsratedaysregion.png)
 
 average increment from one day to the next, for the last 5 weeks
-![12](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/deathsrateweeksregion.png)
+![12](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/deathsrateweeksregion.png)
 
 * State
 Accumulated cases 
-![13](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cumdeathsstate.png)
+![13](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/cumdeathsstate.png)
 
 Increase from one day to the next (last 30 days)
-![14](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/deathsratedaysstate.png)
+![14](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/deathsratedaysstate.png)
 
 average increment from one day to the next, for the last 5 weeks
-![15](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/deathsrateweeksstate.png)
+![15](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/deathsrateweeksstate.png)
 
 * Heatmaps
 
 Heatmap of the correlation between deaths, by region
-![16](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/heatmapregiondeathscorr.png)
+![16](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/heatmapregiondeathscorr.png)
 
 Heat map of the average increase in deaths, from one day to the next, in the last weeks
-![17](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/heatmapregionweeksdeathscorr.png)
+![17](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/heatmapregionweeksdeathscorr.png)
 
 * Letality
 
 Letality rate (for World)
-![18](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/letalityrate.png)
+![18](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/letalityrate.png)
 
 Letality rate (for Brazil, by region)
-![19](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/letalityratebrregion.png)
+![19](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/letalityratebrregion.png)
 
 Letality rate (for Brazil, by state)
-![20](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/letalityratebrstate.png)
+![20](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/images/letalityratebrstate.png)
 
 * World maps
 

@@ -6,6 +6,7 @@ import numpy as np
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import cufflinks as cf
 import argparse as argparse
+import os as os
 cf.go_offline()
 sns.set_style('darkgrid')
 
@@ -23,6 +24,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def covid19(date='6/11/20',nc=6):
+    images = 'images'
     db_deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     db_confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
     db_recovered = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
@@ -52,7 +54,7 @@ def covid19(date='6/11/20',nc=6):
     plt.ylabel('Incremento médio')
     plt.title('Taxade letalidade para os {} paises com maior numero de mortos'.format(nc))
     plt.legend()
-    plt.savefig('letalityrate.png')
+    plt.savefig(os.path.join(images,'letalityrate.png'))
 
 if __name__ == '__main__':
     args = parse_arguments()
