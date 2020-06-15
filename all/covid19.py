@@ -7,6 +7,24 @@ from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import cufflinks as cf
 import argparse as argparse
 import os as os
+import sys 
+
+modules = 'seaborn pandas matplotlib plotly numpy cufflinks argparse os'.split(' ')
+
+install, k = [], 0
+for i in modules:
+    if (i in sys.modules ) == False:
+        install.append(i)
+        print(install[k])
+        k+=1
+
+if len(install) >= 1:
+    print('----------------------------------------------------------')
+    for i in range(len(install)):
+        print('Suggestion :' + '\n \n' + 'pip install {}'.format(install[i]))
+        print()
+    sys.exit()
+
 cf.go_offline()
 sns.set_style('darkgrid')
 

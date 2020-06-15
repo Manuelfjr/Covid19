@@ -1,4 +1,21 @@
 import argparse as argparse
+import sys as sys
+
+modules = 'argparse'.split(' ')
+
+install, k = [], 0
+for i in modules:
+    if (i in sys.modules ) == False:
+        install.append(i)
+        print(install[k])
+        k+=1
+
+if len(install) >= 1:
+    print('----------------------------------------------------------')
+    for i in range(len(install)):
+        print('Suggestion :' + '\n' + 'pip install {}'.format(install[i]))
+        print()
+    sys.exit()
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='''Runs all the code''',

@@ -1,12 +1,26 @@
-#import seaborn as sns
 import pandas as pd
-#import matplotlib.pyplot as plt
 import plotly.graph_objs as go
-#import numpy as np
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import cufflinks as cf
 import argparse
 import os as os
+import sys as sys
+
+modules = 'pandas plotly cufflinks argparse os'.split(' ')
+
+install, k = [], 0
+for i in modules:
+    if (i in sys.modules ) == False:
+        install.append(i)
+        print(install[k])
+        k+=1
+
+if len(install) >= 1:
+    print('----------------------------------------------------------')
+    for i in range(len(install)):
+        print('Suggestion :' + '\n' + 'pip install {}'.format(install[i]))
+        print()
+    sys.exit()
 
 cf.go_offline()
 
