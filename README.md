@@ -58,6 +58,9 @@ The command "-h" show help for use (show the arguments).
 				(default: cwm)
 -----------------------------------------------------------------------------------------------------------------
 ```
+* Example (confirmed cases of world):
+
+![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cwm.gif)
 
 ### All 
 
