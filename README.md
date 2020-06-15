@@ -24,7 +24,7 @@ $ git clone https://github.com/Manuelfjr/Covid19.git
 That feature necessary open cmd in Covid/worldmps, or copy
 ```{git}
 -----------------------------------------------------------------------------------------------------------------
-cd Covid19/worldmps
+$ cd Covid19/worldmps
 
 $ python wmps.py -h
 -----------------------------------------------------------------------------------------------------------------
