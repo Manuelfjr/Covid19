@@ -58,7 +58,7 @@ The command "-h" show help for use (show the arguments).
 				(default: cwm)
 -----------------------------------------------------------------------------------------------------------------
 ```
-* Example (confirmed cases of world):
+#### Example (confirmed cases of world):
 
 ![gif](https://raw.githubusercontent.com/Manuelfjr/Covid19/master/all/cwm.gif)
 
@@ -67,10 +67,13 @@ The command "-h" show help for use (show the arguments).
 the all.py generate all graphs on terminal. Usage:
 
 ```{git}
+-----------------------------------------------------------------------------------------------------------------
 $ python all.py -h 
+-----------------------------------------------------------------------------------------------------------------
 ```
 -h argument for help needed for other arguments. Optional arguments:
 ```{git}
+-----------------------------------------------------------------------------------------------------------------
  -h, --help            		: show this help message and exit
 
  -all ALL, --all ALL   		: run all (default: True)
@@ -89,7 +92,7 @@ $ python all.py -h
 
  -n N, --numstates N   		: states number of Brazil (top n) 
 				(default: 10)
-
+-----------------------------------------------------------------------------------------------------------------
 ```
 # Growth charts and percentages
 Analysis of the growth in the number of contaminated, dead and recovered, for the world, especially for Brazil
