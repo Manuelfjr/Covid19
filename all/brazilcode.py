@@ -5,7 +5,6 @@ import numpy as np
 import argparse as argparse
 import os as os
 import sys
-import tensorflow 
 
 modules = 'pandas seaborn matplotlib numpy argparse os sys'.split(' ')
 
