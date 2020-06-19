@@ -26,10 +26,10 @@ if len(install) >= 1:
 def parse_arguments():
     parser = argparse.ArgumentParser(description='''Runs all the code''',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-d', '--datebr', dest='datebr',
+    parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='11/6',
-                        help='''datebr maps''')
+                        default='8/4',
+                        help='''date br maps''')
     parser.add_argument('-t', '--today', dest='days',
                         type=int,
                         default=30,
@@ -48,7 +48,7 @@ def parse_arguments():
                         help='''number of countries''')
     return parser.parse_args()
 
-def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
+def brazilcode(date='8/4', days=30, weeks=5, n_weeks=13, n=10):
     sns.set_style('darkgrid')
     images, folder = 'images','datasets'
     if not os.path.exists(images):
@@ -91,21 +91,24 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
     statebrconfirm.T.to_csv(os.path.join(folder,'statebrconfirm.csv'))
     statebrdeaths.T.to_csv(os.path.join(folder,'statebrdeaths.csv'))
     
-    
-    #regionbrconfirm.T.to_csv(os.path.join(folder,'regionbrconfirm.csv'))
-    #regionbrdeaths.T.to_csv(os.path.join(folder,'regionbrdeaths.csv'))
+    perd = []
+    for i in regionbrconfirm.index:
+        if i == date:
+            perd.append(True)
+            break
+        perd.append(True)
 
-    #statebrconfirm.T.to_csv(os.path.join(folder,'statebrconfirm.csv'))
-    #statebrdeaths.T.to_csv(os.path.join(folder,'statebrdeaths.csv'))
+    date = date.split('/')[0] + '/' + date.split('/')[1]
 
-    maxconfirmregion = regionbrconfirm.T[datebr].sort_values(ascending=False)
+    maxconfirmregion = regionbrconfirm.T[date].sort_values(ascending=False)
+    print(range(len(perd)), regionbrconfirm['(NE)'][:len(perd)])
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in maxconfirmregion.index:
-        ax.plot(range(regionbrconfirm.shape[0]), regionbrconfirm[i],label=i)
-        ax.set_xlim(0,len(regionbrconfirm.index))
+        ax.plot(range(len(perd)), regionbrconfirm[i][:len(perd)],label=i)
+        ax.set_xlim(0,len(perd))
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Confirmados')
-    plt.title('Acumulado de casos confirmados por COVID-19 (Por Região)- Brasil, {}'.format(datebr +'/20'+'.'))
+    plt.title('Acumulado de casos confirmados por COVID-19 (Por Região)- Brasil, {}'.format(date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'cumconfirmregion.png'))
 
@@ -114,7 +117,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         for j in range(regionbrconfirm.shape[0]-1):
             if regionbrconfirm[i][j] != 0:
                 regionpercconfirm[i][j+1] = ((regionbrconfirm[i][j+1]- regionbrconfirm[i][j])/regionbrconfirm[i][j])
-    a = pd.DataFrame(regionpercconfirm.T[datebr].sort_values(ascending = True))
+    a = pd.DataFrame(regionpercconfirm.T[date].sort_values(ascending = True))
     ixmaxconf = a.index
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -124,7 +127,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.150)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Incremento')
-    plt.title('Incremento de confirmados por COVID-19 no Brasil por Região, para os ultimos {} dias - {}'.format(days,datebr +'/20'+'.'))
+    plt.title('Incremento de confirmados por COVID-19 no Brasil por Região, para os ultimos {} dias - {}'.format(days,date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'confirmratedaysregion.png'))
 
@@ -143,11 +146,11 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.150)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Incremento médio')
-    plt.title('Incremento médio de confirmados para as {} últimas semanas, por COVID-19 no Brasil, por Região. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,datebr + '/20'+ '.'))
+    plt.title('Incremento médio de confirmados para as {} últimas semanas, por COVID-19 no Brasil, por Região. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,date + '/20'+ '.'))
     plt.legend()
     plt.savefig(os.path.join(images,'confirmrateweeksregion.png'))
 
-    maxconfirmstate = statebrconfirm.T[datebr].sort_values(ascending=False)[:n]
+    maxconfirmstate = statebrconfirm.T[date].sort_values(ascending=False)[:n]
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in maxconfirmstate.index:
@@ -155,7 +158,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_xlim(0,len(statebrconfirm.index))
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Confirmados')
-    plt.title('Acumulado de casos confirmados por COVID-19 (Por Estado)- Brasil, {}'.format(datebr +'/20'+'.'))
+    plt.title('Acumulado de casos confirmados por COVID-19 (Por Estado)- Brasil, {}'.format(date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'cumconfirmstate.png'))
 
@@ -164,7 +167,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         for j in range(statebrconfirm.shape[0]-1):
             if statebrconfirm[i][j] != 0:
                 statepercconfirm[i][j+1] = ((statebrconfirm[i][j+1]- statebrconfirm[i][j])/statebrconfirm[i][j])
-    b = pd.DataFrame(statepercconfirm.T[datebr].sort_values(ascending = True))
+    b = pd.DataFrame(statepercconfirm.T[date].sort_values(ascending = True))
     ixmaxconf =  b.T[maxconfirmstate.index].columns
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -174,7 +177,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.35)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Incremento')
-    plt.title('Incremento de casos confirmados por COVID-19 no Brasil por Estado, para os {} dias. {}'.format(days,datebr +'/20'+'.'))
+    plt.title('Incremento de casos confirmados por COVID-19 no Brasil por Estado, para os {} dias. {}'.format(days,date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'confirmratedaysstate.png'))
 
@@ -193,11 +196,11 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0.02,0.2)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Incremento médio')
-    plt.title('Incremento médio de casos confirmados para as {} últimas semanas, por COVID-19 no Brasil, por Estado. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,datebr + '/20'+ '.'))
+    plt.title('Incremento médio de casos confirmados para as {} últimas semanas, por COVID-19 no Brasil, por Estado. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,date + '/20'+ '.'))
     plt.legend()
     plt.savefig(os.path.join(images,'confirmrateweeksstate.png'))
 
-    maxdeathsregion = regionbrdeaths.T[datebr].sort_values(ascending=False)
+    maxdeathsregion = regionbrdeaths.T[date].sort_values(ascending=False)
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in maxconfirmregion.index:
@@ -205,7 +208,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_xlim(0,len(regionbrdeaths.index))
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Mortos')
-    plt.title('Acumulado de mortos por COVID-19 (Por Região)- Brasil, {}'.format(datebr +'/20'+'.'))
+    plt.title('Acumulado de mortos por COVID-19 (Por Região)- Brasil, {}'.format(date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'cumdeathsregion.png'))
 
@@ -214,7 +217,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         for j in range(regionbrdeaths.shape[0]-1):
             if regionbrdeaths[i][j] != 0:
                 regionpercdeaths[i][j+1] = ((regionbrdeaths[i][j+1]- regionbrdeaths[i][j])/regionbrdeaths[i][j])
-    a = pd.DataFrame(regionpercdeaths.T[datebr].sort_values(ascending = True))
+    a = pd.DataFrame(regionpercdeaths.T[date].sort_values(ascending = True))
     ixmaxdeaths = a.index
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -224,7 +227,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.150)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Incremento')
-    plt.title('Incremento de mortos, de um dia para o outro, por COVID-19 no Brasil por Região, para os ultimos {} dias. {}'.format(days,datebr +'/20'+'.'))
+    plt.title('Incremento de mortos, de um dia para o outro, por COVID-19 no Brasil por Região, para os ultimos {} dias. {}'.format(days,date +'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'deathsratedaysregion.png'))
 
@@ -243,11 +246,11 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.150)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Incremento médio')
-    plt.title('Incremento médio de mortos, de um dia para o outro, para as {} últimas semanas, por COVID-19 no Brasil, por Região. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,datebr + '/20'+'.'))
+    plt.title('Incremento médio de mortos, de um dia para o outro, para as {} últimas semanas, por COVID-19 no Brasil, por Região. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks,date + '/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'deathsrateweeksregion.png'))
 
-    maxdeathsstate = statebrdeaths.T[datebr].sort_values(ascending=False)[:n]
+    maxdeathsstate = statebrdeaths.T[date].sort_values(ascending=False)[:n]
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in maxdeathsstate.index:
@@ -255,7 +258,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_xlim(0,len(statebrdeaths.index))
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Confirmados')
-    plt.title('Acumulado de mortes por COVID-19 (Por Estado) - Brasil, {}'.format(datebr+'/20'+'.'))
+    plt.title('Acumulado de mortes por COVID-19 (Por Estado) - Brasil, {}'.format(date+'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'cumdeathsstate.png'))
 
@@ -264,7 +267,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         for j in range(statebrdeaths.shape[0]-1):
             if statebrdeaths[i][j] != 0:
                 statepercdeaths[i][j+1] = ((statebrdeaths[i][j+1]- statebrdeaths[i][j])/statebrdeaths[i][j])
-    b = pd.DataFrame(statepercdeaths.T[datebr].sort_values(ascending = True))
+    b = pd.DataFrame(statepercdeaths.T[date].sort_values(ascending = True))
     ixmaxdeaths =  b.T[maxdeathsstate.index].columns
 
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
@@ -274,7 +277,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0,0.27)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Incremento')
-    plt.title('Incremento de mortos, de um dia para o outro, por COVID-19 no Brasil por Estado, para os ultimos {} dias. {}'.format(days,datebr+'/20'+'.'))
+    plt.title('Incremento de mortos, de um dia para o outro, por COVID-19 no Brasil por Estado, para os ultimos {} dias. {}'.format(days,date+'/20'+'.'))
     plt.legend()
     plt.savefig(os.path.join(images,'deathsratedaysstate.png'))
 
@@ -293,18 +296,18 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.set_ylim(0.02,0.3)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Incremento médio')
-    plt.title('Incremento médio de mortos, de um dia para o outro, para as {} últimas semanas, por COVID-19 no Brasil, por Estado. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks, datebr + '/20' + '.'))
+    plt.title('Incremento médio de mortos, de um dia para o outro, para as {} últimas semanas, por COVID-19 no Brasil, por Estado. Semana {} a semana {} de contagio - {}'.format(weeks,n_weeks - weeks,n_weeks, date + '/20' + '.'))
     plt.legend()
     plt.savefig(os.path.join(images,'deathsrateweeksstate.png'))
 
     plt.figure(figsize=(18,10))
     sns.heatmap(idmeandeathsregion.T.corr().loc[range(3,n_weeks),range(3,n_weeks)],cmap='Reds',annot=True)
-    plt.title('Mapa de calor do incremento médio de mortos, de um dia para o outro, nas ultimas {} semanas, por COVID-19 no Brasil, por Região - {}'.format(n_weeks,datebr + '/20' + '.,'))
+    plt.title('Mapa de calor do incremento médio de mortos, de um dia para o outro, nas ultimas {} semanas, por COVID-19 no Brasil, por Região - {}'.format(n_weeks,date + '/20' + '.,'))
     plt.savefig(os.path.join(images,'heatmapregionweeksdeathscorr.png'))
 
     plt.figure(figsize=(18,10))
     sns.heatmap(idmeandeathsregion.corr(),cmap='Reds',annot=True)
-    plt.title('Mapa de calor das correlações de incremento médio de mortos, de um dia para o outro, por COVID-19 no Brasil, por Região - {}'.format(datebr +'/20'+'.'))
+    plt.title('Mapa de calor das correlações de incremento médio de mortos, de um dia para o outro, por COVID-19 no Brasil, por Região - {}'.format(date +'/20'+'.'))
     plt.savefig(os.path.join(images,'heatmapregiondeathscorr.png'))
 
     tlregiondeaths = pd.DataFrame(np.zeros((regionbrdeaths.shape[0],regionbrdeaths.shape[1])), index = range(regionbrdeaths.shape[0]), columns=regionbrdeaths.columns)
@@ -320,7 +323,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.plot(range(1,tlregiondeaths.shape[0]+1), tlregiondeaths[i],label=i)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Taxa')
-    plt.title('Taxa de letalidade do COVID-19, por região - {}'.format(datebr + '/20' + '.'))
+    plt.title('Taxa de letalidade do COVID-19, por região - {}'.format(date + '/20' + '.'))
     plt.legend()
     plt.savefig(os.path.join(images,'letalityratebrregion.png'))
 
@@ -337,7 +340,7 @@ def brazilcode(datebr='11/6', days=30, weeks=5, n_weeks=13, n=10):
         ax.plot(range(1,tlstatedeaths.shape[0]+1), tlstatedeaths[i],label=i)
     plt.xlabel('Semana do Contágio')
     plt.ylabel('Taxa')
-    plt.title('Taxa de letalidade do COVID-19, por região - {}'.format(datebr + '/20' + '.'))
+    plt.title('Taxa de letalidade do COVID-19, por região - {}'.format(date + '/20' + '.'))
     plt.legend()
     plt.savefig(os.path.join(images,'letalityratebrstate.png'))
 

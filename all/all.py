@@ -14,12 +14,12 @@ def parse_arguments():
                         help='''run all''')
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/11/20',
+                        default='13/4/20',
                         help='''date by US type''')
-    parser.add_argument('-dbr', '--datebr', dest='datebr',
-                        type=str,
-                        default='11/6',
-                        help='''date by brazillian type''')
+#    parser.add_argument('-dbr', '--datebr', dest='datebr',
+#                        type=str,
+#                        default='11/6',
+#                        help='''date by brazillian type''')
     parser.add_argument('-dys', '--days', dest='days',
                         type=int,
                         default=30,
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     args = parse_arguments()
     param = vars(args)
     if param['all'] == True:
-        brazilcode(datebr=param['datebr'], days=param['days'], weeks=param['weeks'], n_weeks=param['n_weeks'], n=param['n'])
+        brazilcode(date=param['date'], days=param['days'], weeks=param['weeks'], n_weeks=param['n_weeks'], n=param['n'])
         graphics(date=param['date'],nc=param['nc'])
         covid19(date=param['date'],nc=param['nc'])
         concat()

@@ -33,7 +33,7 @@ def parse_arguments():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/11/20',
+                        default='13/6/20',
                         help='''date maps''')
     parser.add_argument('-nc', '--nc', dest='nc',
                         type=int,
@@ -41,7 +41,7 @@ def parse_arguments():
                         help='''number country''')
     return parser.parse_args()
 
-def covid19(date='6/11/20',nc=6):
+def covid19(date='13/6/20',nc=6):
     images = 'images'
     db_deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     db_confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
@@ -55,16 +55,23 @@ def covid19(date='6/11/20',nc=6):
     db_confirmed_country.drop(['Lat','Long'],axis=1,inplace=True)
     db_recovered_country.drop(['Lat','Long'],axis=1,inplace=True)
 
-    maxdeaths = db_deaths_country[date].sort_values(ascending=False)[:nc]
+    date = date.split('/')[1] + '/' + date.split('/')[0] + '/' + date.split('/')[2]
+    a = []
+    for i in range(len(db_deaths_country.columns)):
+        if db_deaths_country.columns[i] == date:
+            a.append(True)
+            break
+        a.append(True)
 
-    tldeaths = pd.DataFrame(np.zeros((db_deaths_country.T.shape[0],db_deaths_country.T.shape[1])), index = range(db_deaths_country.T.shape[0]), columns=db_deaths_country.T.columns)
+    maxdeaths = db_deaths_country[date].sort_values(ascending=False)[:nc]
+    tldeaths = pd.DataFrame(np.zeros((len(a),db_deaths_country.T.shape[1])), index = range(len(a)), columns=db_deaths_country.T.columns)
     for i in maxdeaths.index:
-        for j in range(len(tldeaths.index)):
+        for j in range(len(a)):
             if db_deaths_country.T[i][j] == 0:
                 tldeaths[i][j] = 0
             else:
                 tldeaths[i][j] = (db_deaths_country.T[i][j])/(db_confirmed_country.T[i][j])
-    
+
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in  maxdeaths.index:
         ax.plot(range(1,tldeaths.shape[0]+1), tldeaths[i],label=i)

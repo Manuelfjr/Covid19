@@ -24,7 +24,7 @@ def parse_arguments():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/11/20',
+                        default='16/6/20',
                         help='''date maps''')
     parser.add_argument('-nc', '--numcountries', dest='nc',
                         type=int,
@@ -32,7 +32,7 @@ def parse_arguments():
                         help='''number country''')
     return parser.parse_args()
 
-def graphics(date='6/11/20',nc=6):
+def graphics(date='16/6/20',nc=6):
     images = 'images'
     import seaborn as sns
     import pandas as pd
@@ -50,12 +50,20 @@ def graphics(date='6/11/20',nc=6):
     db_deaths_country.drop(['Lat','Long'],axis=1,inplace=True)
     db_confirmed_country.drop(['Lat','Long'],axis=1,inplace=True)
     db_recovered_country.drop(['Lat','Long'],axis=1,inplace=True)
-
+    date = date.split('/')[1] + '/' + date.split('/')[0] + '/' + date.split('/')[2]
+    
+    a = []
+    for i in range(len(db_deaths_country.columns)):
+        if db_deaths_country.columns[i] == date:
+            a.append(True)
+            break
+        a.append(True)
+    
     #Confirmados
         
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in db_confirmed_country[date].sort_values(ascending = False)[:nc].index:
-        ax.plot(range(db_confirmed_country.T.shape[0]), db_confirmed_country.T[i],label=i)
+        ax.plot(range(len(a)), db_confirmed_country.T[i][:len(a)],label=i)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Confirmados')
     plt.title('Confirmados por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
@@ -65,7 +73,7 @@ def graphics(date='6/11/20',nc=6):
     #Mortos
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in db_deaths_country[date].sort_values(ascending = False)[:nc].index:
-        ax.plot(range(db_deaths_country.T.shape[0]), db_deaths_country.T[i],label=i)
+        ax.plot(range(len(a)), db_deaths_country.T[i][:len(a)],label=i)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Mortos')
     plt.title('Mortes por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
@@ -75,7 +83,7 @@ def graphics(date='6/11/20',nc=6):
     #Recuperados
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in db_recovered_country[date].sort_values(ascending = False)[:nc].index:
-        ax.plot(range(db_recovered_country.T.shape[0]), db_recovered_country.T[i],label=i)
+        ax.plot(range(len(a)), db_recovered_country.T[i][:len(a)],label=i)
     plt.xlabel('Dia do Contágio')
     plt.ylabel('Número de Recuperados')
     plt.title('Recuperados por COVID-19, para os {} Maiores Países - {}'.format(nc,date.split('/')[1]+'/'+date.split('/')[0]+'/'+date.split('/')[2]))
