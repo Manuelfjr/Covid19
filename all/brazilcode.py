@@ -101,7 +101,7 @@ def brazilcode(date='8/4', days=30, weeks=5, n_weeks=13, n=10):
     date = date.split('/')[0] + '/' + date.split('/')[1]
 
     maxconfirmregion = regionbrconfirm.T[date].sort_values(ascending=False)
-    print(range(len(perd)), regionbrconfirm['(NE)'][:len(perd)])
+#    print(range(len(perd)), regionbrconfirm['(NE)'][:len(perd)])
     fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(16,8))
     for i in maxconfirmregion.index:
         ax.plot(range(len(perd)), regionbrconfirm[i][:len(perd)],label=i)
