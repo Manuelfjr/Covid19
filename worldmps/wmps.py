@@ -42,24 +42,27 @@ def parse_arguments():
                         help='''boolean value''')
     return parser.parse_args()
 
-if __name__ == '__main__':
-    args = parse_arguments()
-    if vars(args)['all'] == True:
+def wmps(parse_arguments):
+    if parse_arguments['all'] == True:
         from cwm import cwm
         from dwm import dwm
         from rwm import rwm
-        cwm(**vars(args))
-        dwm(**vars(args))
-        rwm(**vars(args))
-    elif vars(args)['all'] == False:
-        if vars(args)['type'] == 'cwm':
+        cwm(**parse_arguments)
+        dwm(**parse_arguments)
+        rwm(**parse_arguments)
+    elif parse_arguments['all'] == False:
+        if parse_arguments['type'] == 'cwm':
             from cwm import cwm
-            cwm(**vars(args))
+            cwm(**parse_arguments)
         else:
-            if vars(args)['type'] == 'dwm':
+            if parse_arguments['type'] == 'dwm':
                 from dwm import dwm
-                dwm(**vars(args))
+                dwm(**parse_arguments)
             else:
-                if vars(args)['type'] == 'rwm':
+                if parse_arguments['type'] == 'rwm':
                     import rwm as rwm
-                    rwm.rwm(**vars(args))
+                    rwm.rwm(**parse_arguments)
+
+if __name__ == '__main__':
+    args = parse_arguments()
+    wmps(vars(args))
