@@ -35,12 +35,8 @@ def parse_arguments():
                         help='''run maps''')
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/10/20',
+                        default='20/6/20',
                         help='''date maps''')
-    parser.add_argument('-b', '--bool', dest='bool',
-                        type=bool,
-                        default=False,
-                        help='''boolean value''')
     parser.add_argument('-f', '--folder', dest='folder',
                         type=str,
                         default='dataworld',
@@ -55,13 +51,14 @@ def parse_arguments():
                         help='''type (confirmed,deaths,recovered) ''')
     return parser.parse_args()
 
-def rwm(run, date='6/10/20',bool=True,folder='dataworld',filename='recovered.csv',type='rwm',all=False):
-    if bool == False:
+def rwm(run=True, date='20/6/20',folder='dataworld',filename='recovered.csv',type='rwm',all=False):
+    date = date.split('/')[1] + '/' + date.split('/')[0] + '/' + date.split('/')[2]
+    try:
         db_recovered = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv', index_col=0)
         if not os.path.exists(folder):
             os.makedirs(folder)
         db_recovered.to_csv(os.path.join(folder, filename), index=None)
-    else:
+    except:
         db_recovered = pd.read_csv(os.path.join(folder, filename))
 
     db_recovered_country = db_recovered.groupby(['Country/Region']).sum()
@@ -76,17 +73,21 @@ def rwm(run, date='6/10/20',bool=True,folder='dataworld',filename='recovered.csv
                     locationmode = 'country names',
                     marker = dict(line = dict(color = 'rgb(0,0,0)',width =1)),
                     colorbar = {'title':"Recuperados confirmados"},
-                    text = date
+                    text = date,
+                    zmin=0,
+                    zmax=1*(10)**(6)
                     ) 
         layout = dict(title = 'Mapa do número de recuperados do COVID-19, por país - {}'.format(date.split('/')[1] + '/'  + date.split('/')[0] + '/' + date.split('/')[2] + '.'),
                     geo = dict(scope='world',
                                 showframe = True,
                                 projection = {'type':'natural earth'})
                     )
-        choromap = go.Figure(data = [data],layout = layout)
+        choromap = go.Figure(data = [data],layout = layout,)
+        
         iplot(choromap,validate=False,image_width=15000, image_height=1000)
     else:
         print(pd.DataFrame(db_recovered_country))
+
 
 if __name__ == '__main__':
     args = parse_arguments()

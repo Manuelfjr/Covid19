@@ -35,12 +35,8 @@ def parse_arguments():
                         help='''run maps''')
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/10/20',
+                        default='20/6/20',
                         help='''date maps''')
-    parser.add_argument('-b', '--bool', dest='bool',
-                        type=bool,
-                        default=False,
-                        help='''boolean value''')
     parser.add_argument('-f', '--folder', dest='folder',
                         type=str,
                         default='dataworld',
@@ -55,13 +51,14 @@ def parse_arguments():
                         help='''type (confirmed,deaths,recovered) ''')
     return parser.parse_args()
 
-def dwm(run, date='6/10/20',bool=True,folder='dataworld',filename='deaths.csv',type='dwm',all=False):
-    if bool == False:
+def dwm(run, date='20/6/20',folder='dataworld',filename='deaths.csv',type='dwm',all=False):
+    date = date.split('/')[1] + '/' + date.split('/')[0] + '/' + date.split('/')[2]
+    try:
         db_deaths = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv', index_col=0)
         if not os.path.exists(folder):
             os.makedirs(folder)
         db_deaths.to_csv(os.path.join(folder, filename), index=None)
-    else:
+    except:
         db_deaths = pd.read_csv(os.path.join(folder, filename))
 
 
@@ -77,7 +74,9 @@ def dwm(run, date='6/10/20',bool=True,folder='dataworld',filename='deaths.csv',t
                     locationmode = 'country names',
                     marker = dict(line = dict(color = 'rgb(0,0,0)',width =1)),
                     colorbar = {'title':"Confirmados confirmados"},
-                    text = date
+                    text = date,
+                    zmin=0,
+                    zmax=5*(10)**(5)
                     ) 
         layout = dict(title = 'Mapa do número de mortos por COVID-19, por país - {}'.format(date.split('/')[1] + '/'  + date.split('/')[0] + '/' + date.split('/')[2] + '.'),
                     geo = dict(scope='world',

@@ -35,12 +35,8 @@ def parse_arguments():
                         help='''run maps''')
     parser.add_argument('-d', '--date', dest='date',
                         type=str,
-                        default='6/10/20',
+                        default='20/6/20',
                         help='''date maps''')
-    parser.add_argument('-b', '--bool', dest='bool',
-                        type=bool,
-                        default=False,
-                        help='''boolean value''')
     parser.add_argument('-f', '--folder', dest='folder',
                         type=str,
                         default='dataworld',
@@ -56,13 +52,14 @@ def parse_arguments():
 
     return parser.parse_args()
 
-def cwm(run, date='6/10/20',bool=True,folder='dataworld',filename='confirmed.csv',type='cwm',all=False):
-    if bool == False:
+def cwm(run, date='20/6/20',folder='dataworld',filename='confirmed.csv',type='cwm',all=False):
+    date = date.split('/')[1] + '/' + date.split('/')[0] + '/' + date.split('/')[2]
+    try:
         db_confirmed = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv', index_col=0)
         if not os.path.exists(folder):
             os.makedirs(folder)
         db_confirmed.to_csv(os.path.join(folder, filename), index=None)
-    else:
+    except:
         db_confirmed = pd.read_csv(os.path.join(folder, filename))
 
 
@@ -78,7 +75,9 @@ def cwm(run, date='6/10/20',bool=True,folder='dataworld',filename='confirmed.csv
                     locationmode = 'country names',
                     marker = dict(line = dict(color = 'rgb(0,0,0)',width =1)),
                     colorbar = {'title':"Confirmados confirmados"},
-                    text = date
+                    text = date,
+                    zmin=0,
+                    zmax=3*(10)**(6)
                     ) 
         layout = dict(title = 'Mapa do número de confirmados com COVID-19, por país - {}'.format(date.split('/')[1] + '/'  + date.split('/')[0] + '/' + date.split('/')[2] + '.'),
                     geo = dict(scope='world',
