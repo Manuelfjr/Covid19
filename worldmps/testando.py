@@ -100,7 +100,7 @@ with urlopen('https://raw.githubusercontent.com/Manuelfjr/Covid19/master/worldmp
 
 import pandas as pd
 df = pd.read_csv('mundo.csv')
-
+print(counties)
 import plotly.graph_objects as go
 
 fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=df['city'], z=df['last_available_confirmed'],
