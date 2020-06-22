@@ -1,7 +1,7 @@
 
 from urllib.request import urlopen
 import json
-with urlopen('dados.json') as response:
+with urlopen('https://raw.githubusercontent.com/Manuelfjr/Covid19/master/worldmps/.testando/dados.json') as response:
     counties = json.load(response)
 
 import pandas as pd
