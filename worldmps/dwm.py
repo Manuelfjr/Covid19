@@ -5,6 +5,7 @@ import cufflinks as cf
 import argparse
 import os as os
 import sys as sys
+import plotly.io as pio
 
 modules = 'pandas plotly cufflinks argparse os'.split(' ')
 
@@ -86,6 +87,7 @@ def dwm(run, date='20/6/20',folder='dataworld',filename='deaths.csv',type='dwm',
 
         choromap = go.Figure(data = [data],layout = layout)
         iplot(choromap,validate=False,image_width=15000, image_height=1000)
+        
     else:
         print(pd.DataFrame(db_deaths_country))
 
