@@ -95,8 +95,8 @@ fig.show()
 import pandas as pd
 from urllib.request import urlopen
 import json
-with urlopen('https://raw.githubusercontent.com/Manuelfjr/Covid19/master/worldmps/testando/idpolygon.json') as response:
-    counties = json.load(response)
+with urlopen('https://raw.githubusercontent.com/fititnt/gis-dataset-brasil/master/municipio/geojson/municipio.json') as response:
+    counties = json.loads(response,enconding='UTF-8')
 
 import pandas as pd
 df = pd.read_csv('mundo.csv',dtype={"city_ibge_code": str})
