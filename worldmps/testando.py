@@ -95,7 +95,7 @@ fig.show()
 import pandas as pd
 from urllib.request import urlopen
 import json
-with urlopen('https://raw.githubusercontent.com/tbrugz/geodata-br/master/geojson/geojs-100-mun.json') as response:
+with urlopen('https://raw.githubusercontent.com/Manuelfjr/Covid19/master/worldmps/testando/idpolygon.json') as response:
     counties = json.load(response)
 
 import pandas as pd
