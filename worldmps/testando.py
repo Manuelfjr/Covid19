@@ -99,14 +99,17 @@ with urlopen('https://raw.githubusercontent.com/Manuelfjr/Covid19/master/worldmp
     counties = json.load(response)
 
 import pandas as pd
-df = pd.read_csv('mundo.csv')
-print(counties)
-import plotly.graph_objects as go
+df = pd.read_csv('mundo.csv',dtype={"city_ibge_code": str})
 
-fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=df['city'], z=df['last_available_confirmed'],
-                                    colorscale="Viridis", zmin=0, zmax=300000,
-                                    marker_opacity=0.5, marker_line_width=0))
-fig.update_layout(mapbox_style="carto-positron",
-                  mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+import plotly.graph_objects as go
+import plotly.express as px
+fig = px.choropleth_mapbox(df, geojson=counties, locations='city_ibge_code', color='last_available_confirmed',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 200000),
+                           mapbox_style="carto-positron",
+                           zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                           opacity=0.5,
+                           labels={'last_available_confirmed':'unemployment rate'}
+                          )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.show()
